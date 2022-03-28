@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{ ViewData["Title"] = "Fizz Buzz"; }
+
+<div class="row">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<div class="row">
+    <form method="post">
+
+        <p>Podaj imie</p>
+        <span asp-validation-for="FizzBuzz.Name" class="text-danger"></span>
+        <input asp-for="FizzBuzz.Name" />
+        <br /><p>Podaj Rok</p>
+
+        <span asp-validation-for="FizzBuzz.Number" class="text-danger"></span>
+        <input asp-for="FizzBuzz.Number" />
+
+        <br /><br /><button type="submit" class="btn btn-primary mb-2">Zatwierdź</button><br />
+
+        @if (Model.Alert_wiek != null)
+        { 
+    <div class="alert alert-danger" role="alert">
+        @Model.Alert_wiek
+    </div>}
+
+        @if (Model.response != null)
+        {<div class="alert alert-success" role="alert">
+                @Model.response
+            </div>}
+
+    </form>
+</div>
+

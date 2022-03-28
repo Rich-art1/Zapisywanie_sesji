@@ -1,0 +1,13 @@
+﻿@page
+@model SavedInSessionModel
+@{
+    ViewData["Title"] = "Data in session";
+}
+
+@if (Model.Lista_user.user != null)
+{
+    @foreach(var item in Model.Lista_user.user)
+    {
+                    <p class="userData">@item.Name, @item.Number - @item.Wynik()</p>
+                }
+}
